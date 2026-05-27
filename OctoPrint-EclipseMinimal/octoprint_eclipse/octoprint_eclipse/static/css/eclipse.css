@@ -1,0 +1,655 @@
+/* ================================================================
+   ECLIPSE MINIMAL PREMIUM — OctoPrint Theme
+   Design system: Tesla-inspired, ultra-minimal, monochromatic
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&display=swap');
+
+/* ── VARIABLES ─────────────────────────────────────────────────── */
+:root {
+  --ec-bg:            #FFFFFF;
+  --ec-surface:       #FBFBFB;
+  --ec-border:        #EAEAEA;
+  --ec-border-light:  #F9F9F9;
+  --ec-text-primary:  #333333;
+  --ec-text-secondary:#555555;
+  --ec-text-muted:    #8E8E93;
+  --ec-text-subtle:   #AAAAAA;
+  --ec-btn-bg:        #F4F4F4;
+  --ec-btn-hover:     #EAEAEA;
+  --ec-online:        #2ECC71;
+  --ec-offline:       #E74C3C;
+}
+
+/* ── BASE RESET & TYPOGRAPHY ───────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Inter', 'Gotham', system-ui, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  background-color: var(--ec-bg) !important;
+  color: var(--ec-text-primary) !important;
+  letter-spacing: -0.2px !important;
+}
+
+/* ── NAVBAR / TOPBAR ───────────────────────────────────────────── */
+#navbar,
+.navbar,
+.navbar-fixed-top {
+  background-color: var(--ec-bg) !important;
+  background-image: none !important;
+  border-bottom: 1px solid var(--ec-border) !important;
+  box-shadow: none !important;
+  min-height: 56px !important;
+}
+
+.navbar .brand,
+.navbar-brand {
+  font-size: 10pt !important;
+  font-weight: 700 !important;
+  letter-spacing: 5px !important;
+  text-transform: uppercase !important;
+  color: var(--ec-text-primary) !important;
+  text-shadow: none !important;
+  padding: 16px 24px !important;
+}
+
+.navbar .nav > li > a,
+.navbar-nav > li > a {
+  color: var(--ec-text-muted) !important;
+  font-size: 8.5pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  text-shadow: none !important;
+  padding: 18px 16px !important;
+  background: none !important;
+  border: none !important;
+}
+
+.navbar .nav > li > a:hover,
+.navbar-nav > li > a:hover {
+  color: var(--ec-text-primary) !important;
+  background: none !important;
+}
+
+.navbar .nav > li.active > a,
+.navbar-nav > li.active > a {
+  color: var(--ec-text-primary) !important;
+  background: none !important;
+  border-bottom: 2px solid var(--ec-text-primary) !important;
+}
+
+/* ── SIDEBAR ───────────────────────────────────────────────────── */
+#sidebar,
+.octoprint-sidebar {
+  background-color: var(--ec-bg) !important;
+  border-right: 1px solid var(--ec-border) !important;
+  box-shadow: none !important;
+}
+
+/* ── ACCORDION / SECTIONS ──────────────────────────────────────── */
+.accordion-group,
+.panel,
+.panel-default {
+  background-color: var(--ec-surface) !important;
+  border: 1px solid var(--ec-border) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  margin-bottom: 16px !important;
+}
+
+.accordion-heading,
+.panel-heading {
+  background-color: var(--ec-surface) !important;
+  background-image: none !important;
+  border-bottom: 1px solid var(--ec-border) !important;
+  border-radius: 12px 12px 0 0 !important;
+  padding: 20px 24px !important;
+}
+
+.accordion-heading .accordion-toggle,
+.panel-heading .panel-title,
+.panel-heading a {
+  font-size: 8.5pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: var(--ec-text-muted) !important;
+  text-decoration: none !important;
+}
+
+.accordion-heading .accordion-toggle:hover,
+.panel-heading a:hover {
+  color: var(--ec-text-primary) !important;
+}
+
+.accordion-inner,
+.panel-body {
+  background-color: var(--ec-surface) !important;
+  padding: 24px !important;
+  border-radius: 0 0 12px 12px !important;
+}
+
+/* ── BUTTONS ───────────────────────────────────────────────────── */
+.btn {
+  background-color: var(--ec-btn-bg) !important;
+  background-image: none !important;
+  color: var(--ec-text-secondary) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 24px !important;
+  font-size: 9pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  font-family: inherit !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease !important;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--ec-btn-hover) !important;
+  color: var(--ec-text-primary) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.btn:active {
+  background-color: var(--ec-border) !important;
+  box-shadow: none !important;
+}
+
+.btn[disabled],
+.btn.disabled {
+  background-color: #FAFAFA !important;
+  color: #CCCCCC !important;
+  cursor: not-allowed !important;
+  opacity: 1 !important;
+}
+
+/* Primary — same flat treatment, just slightly darker */
+.btn-primary {
+  background-color: var(--ec-text-primary) !important;
+  color: #FFFFFF !important;
+}
+.btn-primary:hover {
+  background-color: #444444 !important;
+  color: #FFFFFF !important;
+}
+
+/* Danger */
+.btn-danger {
+  background-color: var(--ec-offline) !important;
+  color: #FFFFFF !important;
+}
+.btn-danger:hover {
+  background-color: #c0392b !important;
+  color: #FFFFFF !important;
+}
+
+/* Small buttons */
+.btn-small,
+.btn-sm {
+  padding: 8px 16px !important;
+  font-size: 8pt !important;
+}
+
+/* Block */
+.btn-block {
+  display: block !important;
+  width: 100% !important;
+}
+
+/* ── INPUTS & FORMS ────────────────────────────────────────────── */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+select,
+textarea {
+  background-color: var(--ec-bg) !important;
+  border: 1px solid var(--ec-border) !important;
+  border-radius: 6px !important;
+  color: var(--ec-text-secondary) !important;
+  font-family: inherit !important;
+  font-size: 9.5pt !important;
+  padding: 10px 12px !important;
+  box-shadow: none !important;
+  transition: border-color 0.2s !important;
+  outline: none !important;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--ec-text-muted) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+input[type="range"] {
+  accent-color: var(--ec-text-primary) !important;
+}
+
+label {
+  font-size: 8.5pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: var(--ec-text-muted) !important;
+}
+
+.control-group {
+  margin-bottom: 16px !important;
+}
+
+/* ── TABLES ────────────────────────────────────────────────────── */
+table {
+  border-collapse: collapse !important;
+  font-size: 9.5pt !important;
+  width: 100% !important;
+}
+
+th {
+  color: var(--ec-text-muted) !important;
+  font-weight: 600 !important;
+  font-size: 7.5pt !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  padding: 14px !important;
+  border-bottom: 1px solid var(--ec-border) !important;
+  background: none !important;
+}
+
+td {
+  padding: 14px !important;
+  border-bottom: 1px solid var(--ec-border-light) !important;
+  color: var(--ec-text-secondary) !important;
+  background: none !important;
+}
+
+tr:last-child td {
+  border-bottom: none !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: var(--ec-surface) !important;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: var(--ec-btn-bg) !important;
+}
+
+/* ── TABS (Bootstrap) ──────────────────────────────────────────── */
+.nav-tabs {
+  border-bottom: 1px solid var(--ec-border) !important;
+  background: none !important;
+}
+
+.nav-tabs > li > a {
+  font-size: 8.5pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: var(--ec-text-muted) !important;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+  background: none !important;
+  padding: 14px 20px !important;
+  margin: 0 !important;
+  transition: color 0.2s !important;
+}
+
+.nav-tabs > li > a:hover {
+  color: var(--ec-text-primary) !important;
+  background: none !important;
+  border-color: transparent !important;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  color: var(--ec-text-primary) !important;
+  background: none !important;
+  border: none !important;
+  border-bottom: 2px solid var(--ec-text-primary) !important;
+}
+
+.tab-content {
+  padding: 24px 0 !important;
+}
+
+/* ── PROGRESS BARS ─────────────────────────────────────────────── */
+.progress {
+  background-color: var(--ec-border) !important;
+  background-image: none !important;
+  border-radius: 2px !important;
+  height: 3px !important;
+  box-shadow: none !important;
+  margin-bottom: 8px !important;
+}
+
+.progress-bar {
+  background-color: var(--ec-text-primary) !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-radius: 2px !important;
+  transition: width 0.6s ease !important;
+}
+
+.progress-bar-success { background-color: var(--ec-online) !important; }
+.progress-bar-danger  { background-color: var(--ec-offline) !important; }
+
+/* ── STATUS INDICATORS ─────────────────────────────────────────── */
+.badge,
+.label {
+  font-size: 7.5pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  box-shadow: none !important;
+}
+
+.label-success, .badge-success { background-color: var(--ec-online) !important; }
+.label-danger,  .badge-danger  { background-color: var(--ec-offline) !important; }
+.label-default, .badge-default {
+  background-color: var(--ec-btn-bg) !important;
+  color: var(--ec-text-muted) !important;
+}
+
+/* ── CONNECTION STATUS ICON ────────────────────────────────────── */
+#state .value,
+#connection_status {
+  font-size: 8.5pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+}
+
+/* ── TEMPERATURE DISPLAY (big numbers) ─────────────────────────── */
+#temperature-table td.cell-actual,
+.temperature-actual,
+#temp_actual {
+  font-size: 48pt !important;
+  font-weight: 300 !important;
+  line-height: 1 !important;
+  letter-spacing: -2px !important;
+  color: var(--ec-text-primary) !important;
+}
+
+/* ── PRINT STATUS NUMBERS ──────────────────────────────────────── */
+#state .row-fluid .span6 .value,
+.print-time,
+.time-elapsed {
+  font-size: 32pt !important;
+  font-weight: 300 !important;
+  letter-spacing: -1px !important;
+  color: var(--ec-text-primary) !important;
+}
+
+/* ── MODALS ────────────────────────────────────────────────────── */
+.modal-backdrop {
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.modal,
+.modal-dialog {
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+.modal-content {
+  background-color: var(--ec-bg) !important;
+  border: 1px solid var(--ec-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.06) !important;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--ec-border) !important;
+  padding: 24px 28px !important;
+  background: none !important;
+}
+
+.modal-header .modal-title,
+.modal-header h3,
+.modal-header h4 {
+  font-size: 9pt !important;
+  font-weight: 700 !important;
+  letter-spacing: 3px !important;
+  text-transform: uppercase !important;
+  color: var(--ec-text-primary) !important;
+}
+
+.modal-body {
+  padding: 28px !important;
+  color: var(--ec-text-secondary) !important;
+}
+
+.modal-footer {
+  border-top: 1px solid var(--ec-border) !important;
+  padding: 20px 28px !important;
+  background: var(--ec-surface) !important;
+  border-radius: 0 0 12px 12px !important;
+}
+
+.close {
+  color: var(--ec-text-muted) !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+}
+
+.close:hover {
+  color: var(--ec-text-primary) !important;
+}
+
+/* ── ALERTS ────────────────────────────────────────────────────── */
+.alert {
+  border-radius: 8px !important;
+  border: 1px solid var(--ec-border) !important;
+  background-color: var(--ec-surface) !important;
+  color: var(--ec-text-secondary) !important;
+  font-size: 9pt !important;
+  padding: 16px 20px !important;
+  box-shadow: none !important;
+}
+
+.alert-error,
+.alert-danger {
+  border-color: var(--ec-offline) !important;
+  background-color: #fff8f8 !important;
+  color: var(--ec-offline) !important;
+}
+
+.alert-success {
+  border-color: var(--ec-online) !important;
+  background-color: #f8fff8 !important;
+  color: #27ae60 !important;
+}
+
+/* ── DROPDOWNS ─────────────────────────────────────────────────── */
+.dropdown-menu {
+  background-color: var(--ec-bg) !important;
+  border: 1px solid var(--ec-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+  padding: 8px !important;
+  min-width: 180px !important;
+}
+
+.dropdown-menu > li > a {
+  font-size: 9pt !important;
+  font-weight: 400 !important;
+  color: var(--ec-text-secondary) !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li.active > a {
+  background-color: var(--ec-btn-bg) !important;
+  color: var(--ec-text-primary) !important;
+}
+
+.dropdown-menu .divider {
+  background-color: var(--ec-border) !important;
+  margin: 6px 0 !important;
+}
+
+/* ── SCROLLBAR ─────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ec-border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ec-text-subtle);
+}
+
+/* ── TERMINAL / GCODE CONSOLE ──────────────────────────────────── */
+#terminal,
+#term,
+.terminal {
+  font-family: 'SF Mono', 'Fira Mono', 'Consolas', monospace !important;
+  font-size: 9pt !important;
+  background-color: var(--ec-surface) !important;
+  color: var(--ec-text-muted) !important;
+  border: 1px solid var(--ec-border) !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  line-height: 1.8 !important;
+}
+
+/* ── FILE LIST ─────────────────────────────────────────────────── */
+#files .entry .name {
+  font-size: 9.5pt !important;
+  color: var(--ec-text-primary) !important;
+  font-weight: 400 !important;
+}
+
+#files .entry .meta {
+  font-size: 8pt !important;
+  color: var(--ec-text-subtle) !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* ── GENERIC HEADINGS ──────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  color: var(--ec-text-primary) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.5px !important;
+}
+
+h1 { font-size: 32pt !important; }
+h2 { font-size: 22pt !important; }
+h3 { font-size: 14pt !important; }
+
+/* section mini-titles */
+.section-title,
+.accordion-heading strong {
+  font-size: 8.5pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: var(--ec-text-muted) !important;
+}
+
+/* ── TOOLTIP ───────────────────────────────────────────────────── */
+.tooltip .tooltip-inner {
+  background-color: rgba(51, 51, 51, 0.92) !important;
+  border-radius: 6px !important;
+  font-size: 8pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  padding: 6px 12px !important;
+}
+
+/* ── MISC OCTOPRINT SPECIFICS ──────────────────────────────────── */
+#wrapper {
+  background-color: var(--ec-bg) !important;
+}
+
+#footer {
+  background-color: var(--ec-bg) !important;
+  border-top: 1px solid var(--ec-border) !important;
+  color: var(--ec-text-subtle) !important;
+  font-size: 8pt !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Webcam container */
+#webcam_rotator,
+#webcam_container {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--ec-border) !important;
+}
+
+/* Override Bootstrap gradients everywhere */
+.well {
+  background-color: var(--ec-surface) !important;
+  background-image: none !important;
+  border: 1px solid var(--ec-border) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+/* Remove all Bootstrap box-shadows */
+.form-control:focus,
+.form-control {
+  box-shadow: none !important;
+}
+
+/* Popover */
+.popover {
+  background-color: var(--ec-bg) !important;
+  border: 1px solid var(--ec-border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+.popover-title {
+  background: none !important;
+  border-bottom: 1px solid var(--ec-border) !important;
+  font-size: 8.5pt !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: var(--ec-text-muted) !important;
+}
+
+/* ── TAB SWITCH ANIMATION ──────────────────────────────────────── */
+@keyframes eclipseFadeIn {
+  from { opacity: 0; transform: scale(0.99); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.tab-pane.active,
+.tab-content > .active {
+  animation: eclipseFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
